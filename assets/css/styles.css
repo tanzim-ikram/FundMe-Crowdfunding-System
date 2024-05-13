@@ -1,0 +1,727 @@
+/* -------------------------Common CSS Starts------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+header,
+footer {
+    margin: 0;
+    background-color: #fffafa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+    width: 100px;
+    border-style: none;
+    border-top-style: solid;
+    border-color: #7cb46c;
+    border-width: 3px;
+    text-align: left;
+}
+
+/* --------------------------Common CSS Ends-------------------------- */
+
+/* -------------------------CSS for header.php Starts------------------------- */
+
+.header {
+    overflow: hidden;
+    padding: 20px 10px;
+    border-bottom: 1px solid black;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    margin: 0 2px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+}
+
+.header a:hover:not(.logo) {
+    background-color: #ddd;
+    color: black;
+}
+
+.header a.active:not(.logo) {
+    background-color: #7cb46c;
+    color: white;
+}
+
+.header-right {
+    padding: 10px;
+    float: right;
+    text-align: middle;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+/* --------------------------CSS for header.php Ends-------------------------- */
+
+/* -------------------------CSS for home.php Starts------------------------- */
+
+.welcome {
+    padding: 0 22px;
+}
+
+.welcome h1 {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.welcome img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 1470px;
+    height: 420px;
+}
+
+.welcome-text {
+    font-size: large;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+/* --------------------------CSS for home.php Ends-------------------------- */
+
+/* -------------------------CSS for login.php Starts------------------------- */
+
+.login-table {
+    width: 100%;
+}
+
+.login-card {
+    border: 1px solid black;
+    width: 26%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.login-form label:not(.remember-me) {
+    text-align: left;
+    display: block;
+    margin-top: 30px;
+    margin-left: 45px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="submit"] {
+    width: 80%;
+    padding: 10px;
+    margin: 5px auto;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-form input[type="checkbox"] {
+    margin-left: 40px;
+    display: inline;
+}
+
+p.error-text {
+    text-align: center;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+span.error-message {
+    display: block;
+    text-align: center;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.login-form input[type="submit"] {
+    background-color: #4CAF50;;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.remember-me {
+    display: inline;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a.forget-pass {
+    text-decoration: none;
+    display: block;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a.forget-pass:hover {
+    text-decoration: underline;
+}
+
+/* -------------------------CSS for login.php Ends------------------------- */
+
+/* ------------------------CSS for forgetPassword.php Starts------------------------ */
+
+.forgetpass-table {
+    width: 100%;
+}
+
+.forgetpass-card {
+    border: 1px solid black;
+    width: 26%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+
+.forgetpass-form {
+    padding: 10px;
+}
+
+.forgetpass-form span {
+    margin-left: 16px;
+}
+
+.forgetpass-form label {
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+    margin-left: 16px;
+}
+
+.forgetpass-form input[type="email"],
+.forgetpass-form input[type="password"],
+.forgetpass-form input[type="submit"] {
+    width: 90%;
+    padding: 10px;
+    margin: 5px auto;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.forgetpass-form input[type="submit"] {
+    background-color: #4CAF50;;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.forgetpass-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* -------------------------CSS for forgetPassword.php Ends------------------------- */
+
+/* ------------------------CSS for signup.php Starts------------------------ */
+
+.signup-main-table {
+    width: 100%;
+}
+
+.signup-card {
+    border: 1px solid black;
+    width: 40%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.signup-form label {
+    text-align: left;
+    display: block;
+    margin-left: 20px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    margin: 5px auto;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.signup-form input[type="reset"],
+.signup-form input[type="submit"] {
+    width: 25%;
+    padding: 10px;
+    display: inline;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    
+}
+
+.signup-sub-table {
+    margin: auto;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.signup-sub-table tr td:first-child {
+    padding: 10px;
+}
+
+.signup-sub-table tr td:nth-child(2) {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.error-message {
+    color: red;
+}
+
+.signup-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.signup-form input[type="reset"] {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.signup-form input[type="reset"]:hover {
+    background-color: #da190b;
+}
+
+.buttons {
+    text-align: center;
+}
+
+/* -------------------------CSS for signup.php Ends------------------------- */
+
+/* -------------------------CSS for dashboardAdmin.php Starts------------------------- */
+
+/* Sidebar */
+.dashboard-sidebar {
+    /* background-color: #fff; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid black;
+}
+
+.dashboard-sidebar h4 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 40px;
+    color: #333;
+}
+
+.dashboard-options {
+    margin-top: 20px;
+}
+
+.dashboard-options ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.dashboard-options ul li {
+    margin-bottom: 5px;
+}
+
+.dashboard-options ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 40px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-options ul li a:hover {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.dashboard-options ul li.active a {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+/* Main Content */
+.dashboard-welcome-text {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.dashboard-text {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 40px;
+    text-align: justify;
+}
+
+/* -------------------------CSS for dashboardAdmin.php Ends------------------------- */
+
+/* ------------------------CSS for createCampaings.php Starts------------------------ */
+.camp-form {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.payment-option {
+    display: inline;
+}
+
+input[type="reset"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+input[type="reset"]:hover {
+    background-color: #da190b;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+/* -------------------------CSS for createCampaings.php Ends------------------------- */
+
+/* ------------------------CSS for campaings.php Starts------------------------ */
+
+/* Table */
+.campaign-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Campaign Description */
+.campaign-description {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px 20px;
+}
+
+.campaign-description h3 {
+    margin-left: 10px;
+}
+
+.campaign-description p {
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.campaign-description button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.campaign-description button:hover {
+    background-color: #45a049;
+}
+
+/* -------------------------CSS for campaings.php Ends------------------------- */
+
+/* ------------------------CSS for manageCampaings.php Starts------------------------ */
+
+/* Table */
+.manage-camp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 330px;
+}
+
+.manage-camp-table hr {
+    margin-bottom: 30px;
+}
+
+.manage-camp-table th,
+.manage-camp-table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.manage-camp-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+/* Form Buttons */
+.action-form {
+    display: inline-block;
+}
+
+.accept-btn {
+    padding: 8px 16px;
+    margin-top: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reject-btn {
+    padding: 8px 16px;
+    margin-top: 12px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accept-btn:hover {
+    background-color: #45a049;
+}
+
+.reject-btn:hover {
+    background-color: #da190b;
+}
+
+.camp-col {
+    text-align: center;
+}
+
+/* -------------------------CSS for manageCampaings.php Ends------------------------- */
+
+/* -----------------------CSS for createGiveaways.php Starts----------------------- */
+.giveaway-table {
+    margin: 32px 0;
+}
+
+.giveaway-form {
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ------------------------CSS for createGiveaways.php Ends------------------------ */
+
+/* ----------------------CSS for giveaways.php Starts---------------------- */
+
+
+
+/* -----------------------CSS for giveaways.php Ends----------------------- */
+
+/* ------------------------CSS for manageGiveaways.php Starts------------------------ */
+
+/* Table */
+.manage-give-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 300px;
+}
+
+.give-heading {
+    margin-top: 30px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.manage-give-table hr {
+    margin-bottom: 30px;
+}
+
+.manage-give-table th,
+.manage-give-table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.manage-give-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.give-col {
+    text-align: center;
+}
+
+/* -------------------------CSS for manageGiveaways.php Ends------------------------- */
+
+/* ------------------------CSS for viewGiveawayApplications.php Starts------------------------ */
+
+.give-app-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 400px;
+}
+
+.give-app-table hr {
+    margin-bottom: 30px;
+}
+
+.give-app-table hr {
+    margin-bottom: 30px;
+}
+
+.give-app-table th,
+.give-app-table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.give-app-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+
+/* -------------------------CSS for viewGiveawayApplications.php Ends------------------------- */
+
+/* ------------------------CSS for acquireGiveaway.php Starts------------------------ */
+
+.acquire-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.acquire-form {
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+}
+
+.acquire-field {
+    margin: 22px 0;
+}
+
+/* -------------------------CSS for acquireGiveaway.php Ends------------------------- */
+
+/* -------------------------CSS for footer.php Starts------------------------- */
+
+footer {
+    border-top: 1px solid black;
+    width: 100%;
+    padding: 10px;
+    background-color: #7cb46c;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* --------------------------CSS for footer.php Ends-------------------------- */

@@ -1,0 +1,138 @@
+
+.l1{
+  
+    background-color:coral;
+}
+.l2{
+    background-color:aquamarine;
+}
+.l3{
+    background-color: rgb(98, 142, 85);
+    height: 1500px;
+    font-weight: 200;
+    position:center;
+}
+.l4{
+    background-color:chocolate;
+    
+}
+.l5{
+    background-color: rgb(0, 208, 255);
+    
+}
+
+.r1{
+
+    background-color:green;
+}
+
+.d1{
+    background-color: skyblue;
+        }
+.d2{
+    background-color: rgb(36, 0, 128);
+        }
+.d3{
+    background-color: rgb(98, 142, 85);
+        }
+ .d4{
+     background-color: rgb(128, 0, 66);
+        }
+.d5{
+     background-color: rgb(207, 229, 200);
+       }
+
+.dn1{
+     background-color: rgb(98, 142, 85);
+       }
+.dn1{
+     background-color: rgb(85, 117, 142);
+       }
+
+       .dn1{
+        background-color: rgb(98, 142, 85);
+         height: 1500px;
+           }
+    .dn2{
+        background-color:coral;
+           }
+    .dn3{
+         background-color: rgb(0, 208, 255);
+         height: 100px;
+           }
+    .dn4{
+         background-color: rgb(0, 255, 174);
+            height: 100px;
+              }
+              .dn5{
+                background-color: rgb(255, 0, 195);
+                height: 100px;
+                  }
+                  .dn6{
+                    background-color: rgb(255, 153, 0);
+                    height: 100px;
+                      }
+.b1{
+    background-color: rgb(255, 0, 119);
+    height: 1500px;
+}
+
+.b2{
+    background-color:rgb(80, 255, 135);
+}
+.n1{
+    background-color: rgb(165, 61, 42);
+    height: 1500px;
+}
+.n2{
+    background-color:rgb(80, 255, 135);
+}
+
+.dc1{
+    background-color: rgb(0, 208, 255);
+    width: 200px;
+       }
+.dc2{
+        background-color:coral;
+    }
+.dc3{
+    
+    background-color: rgb(98, 142, 85);
+    height: 1500px;
+}
+.dc4{
+    background-color: coral;
+}
+.dc5{
+    background-color: coral;
+}
+.w1{
+    
+    background-color: rgb(98, 142, 85);
+    height: 1500px;
+}
+.w2{
+    background-color: rgb(0, 208, 255);
+    width: 200px;
+}
+
+.w3{
+    background-color:rgb(255, 165, 127);
+    
+}
+.w4{
+    background-color:rgb(148, 255, 127);
+    
+}
+.w5{
+    background-color:coral;
+    
+}
+.w6{
+    background-color:coral;
+    
+}
+.p1{
+    background-color: rgb(98, 142, 85);
+    
+}
