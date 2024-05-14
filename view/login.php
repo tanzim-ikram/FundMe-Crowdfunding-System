@@ -1,135 +1,110 @@
-<?php
-
-    require_once("../controller/loginCheck.php");
-
-?>
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <title>Login</title>
-</head>
-
-<body>
-    <table class="login-table" cellspacing="0">
-        <tr>
-            <td>
-                <div class="header">
-                    <a href="home.php" class="logo"><img class="logo" src="../assets/images/FundMe.jpg" alt="FundMe Logo" width="200" height="65"></a>
-                    <div class="header-right">
-                        <a href="home.php">Home</a>
-                        <a href="campaings.php">Campaings</a>
-                        <a href="giveaways.php">Giveaways</a>
-                        <a class="active" href="signup.php">Sign Up</a>
-                    </div>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div class="login-card">
-                    <form class="login-form" method="POST" action="" enctype="">
-                        
-                        <h2 class="login-text">Log in to your account</h2>
-                        <hr>
-
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" value="" onkeyup="checkUserName()"/>
-                        <span class="error-message" id="usernameError"></span>
-                        
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" value="" onkeyup="checkPassword()"/>
-                        <span class="error-message" id="passwordError"></span>
-
-                        <p class="error-text" id="error-message" style="color: red;"><b><?= $error ?></b></p>
-                        <input class="remember-me" type="checkbox" name="remember_me" value='true'>
-                        <label class="remember-me" for="checkbox">Remember Me</label>
-
-                        <br>
-
-                        <input type="submit" name="submit" value="Submit" id="submitButton" disabled />
-                        <a class="forget-pass" href="forgetPassword.php">Forget Password?</a>
-
-                    </form>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <br><br><br>
-                <?php include('footer.php'); ?>
-            </td>
-        </tr>
-    </table>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #1877F2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+       
+    </style>
     <script>
-        function checkFormValidity() {
-            let username = document.getElementById('username').value;
-            let password = document.getElementById('password').value;
+        function validateForm() {
+            const emailOrPhone = document.forms["loginForm"]["email"].value;
+            const password = document.forms["loginForm"]["psw"].value;
 
-            let usernameError = document.getElementById('usernameError').innerText;
-            let passwordError = document.getElementById('passwordError').innerText;
-
-            let submitButton = document.getElementById('submitButton');
-
-            if (
-                username === '' ||
-                password === '' ||
-                usernameError !== '' ||
-                passwordError !== ''
-            ) {
-                submitButton.disabled = true;
-            } 
-            else {
-                submitButton.disabled = false;
-            }
-        }
-
-        function checkChar(ch) {
-            return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || ch === '.' || ch === ' ' || !isNaN(ch);
-        }
-
-        function checkUserName() {
-            let username = document.getElementById('username').value;
-
-            if (username === '') {
-                document.getElementById('usernameError').innerHTML = 'Username cannot be empty.';
+            if (emailOrPhone === "") {
+                document.getElementById("emailError").innerText = "Email or phone number is required.";
+                return false;
             } else {
-                for (let i = 0; i < username.length; i++) {
-                    if (!checkChar(username[i])) {
-                        document.getElementById('usernameError').innerHTML = 'Username can only contain letters, numbers or  dots.';
-                        break;
-                    }
-                }
-
-                if (username.split(' ').length > 1) {
-                    document.getElementById('usernameError').innerHTML = 'Username cannot contain more than one word.';
-                } else if (username.length > 15) {
-                    document.getElementById('usernameError').innerHTML = 'Username cannot exceed 15 characters.';
-                } else {
-                    document.getElementById('usernameError').innerHTML = '';
-                }
+                document.getElementById("emailError").innerText = "";
             }
-            checkFormValidity();
-        }
 
-        function checkPassword() {
-            let password = document.getElementById('password').value;
-
-            if (password === '') {
-                document.getElementById('passwordError').innerHTML = 'Password cannot be empty.';
-            } else if (password.length < 8) {
-                document.getElementById('passwordError').innerHTML = 'Password must be at least 8 characters long.';
+            // Regular expression to validate email format
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(emailOrPhone)) {
+                document.getElementById("emailError").innerText = "Please enter a valid email address.";
+                return false;
             } else {
-                document.getElementById('passwordError').innerHTML = '';
+                document.getElementById("emailError").innerText = "";
             }
-            checkFormValidity();
-        }
 
+            if (password === "") {
+                document.getElementById("passwordError").innerText = "Password is required.";
+                return false;
+            } else {
+                document.getElementById("passwordError").innerText = "";
+            }
+
+            if (password.length < 6 || password.length > 8) {
+                document.getElementById("passwordError").innerText = "Password must be between 6 and 8 characters.";
+                return false;
+            } else {
+                document.getElementById("passwordError").innerText = "";
+            }
+        }
     </script>
-</body>
+</head>
+<body>
 
+<h2>Login Form</h2>
+
+<form name="loginForm" action="/action_page.php" method="post" onsubmit="return validateForm()">
+    <div class="container">
+        <label for="email"><b>Email or Phone Number</b></label>
+        <input type="text" placeholder="Enter Email or Phone Number" name="email" required>
+        <span id="emailError" class="error-message"></span>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <span id="passwordError" class="error-message"></span>
+
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+  <div class="links">
+    <span class=""><a href="forgotpassword.php">Forgot password?</a></span> 
+    <span class=""><a href="registration.php">Register new</a></span>
+    <style>
+
+h2 {
+            text-align: center; 
+        }
+        .links {
+            text-align: center; 
+        }
+
+    </style>
+  </div>
+</form> 
+
+</body>
 </html>

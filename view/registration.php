@@ -1,119 +1,134 @@
-<?php 
-$serverName="localhost:3307";
-$userName="root";
-$password="";
-$dbName="CFS1";
-$conn=new mysqli($serverName,$userName,$password,$dbName);
-session_start();
-
-if(!isset($_SESSION['user_name'])){
-	
-}
-if(isset($_POST['reg'])){
-	$name=$_POST['name'];
-	$userName=$_POST['user_name'];
-	$email=$_POST['email'];
-	$contactNum=$_POST['conNum'];
-	$pass=$_POST['password'];
-
-	$sql="select * from donator where UserName='$userName'";
-	$res=mysqli_query($conn,$sql);
-	if($res->num_rows>0)
-	{
-	echo "This user name already exist please try another user name!";   
-		
-	}
-	else if($_POST['password']==$_POST['confirmPassword'])
-	{ 
-	   
-		$sql1="INSERT INTO `donator` ( `UserName`, `Name`, `Password`, `Email`, `ContactNum`) VALUES ( '$userName', '$name', '$pass', '$email', '$contactNum'); ";
-		$res1=mysqli_query($conn,$sql1);
-		if(!empty($res1)){
-			echo " Registration Successfull !";
-		}
-		else{
-			echo "Something is wrong! Please try again!";
-		}
-		
-	}
-	else{
-		echo " password and confirm password are not same! please try again !" ;
-	}
-}
-?>
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Registration</title>
-</head>
-
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
     <style>
-        
-        </style>
-    <table border = '1' width= 100%>
-        <tr>
-            <td width= 70%>
-            <img src="FundMe.jpg" alt="" width="200" height="100">
-            </td>
-            <td align = "center">
-                <a href="home.php">Home</a>
-                | <a href="login.php">login</a>
-                | <a href="registration.php">Registration</a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan = "2">
-                <center>
-                <link rel="stylesheet" href="style.css"/>
-                    <form action="" method="POST" enctype="">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
 
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-                        <h3>REGISTRATION</h3>
-                        <hr>
-                        <table border="0" cellspacing="0" cellpadding="0">
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 60px;
+            background-color: #7DB669;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
 
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-						<tr>
-                                <td><label for="name">Name</label> </td>
-                                <td> : <input type="text" name="name" value=""/></td>
-                            </tr>
-                            <tr>
-                                <td><label for="username">Username</label> </td>
-                                <td> : <input type="text" name="user_name" value=""/> </td>
-                            </tr>
-                            <tr>
-                                <td><label for="email">Email</label> </td>
-                                <td> : <input type="text" name="email" value=""/> </td>
-                            </tr>
-                            <tr>
-                                <td><label for="number">Number</label> </td>
-                                <td> : <input type="text" name="conNum" value=""/></td>
-                            </tr>
-                            <tr>
-                                <td><label for="password">Password</label> </td>
-                                <td> : <input type="password" name="password" value=""/> </td>
-                            </tr>
-                            <tr>
-                                <td><label for="confirmPassword">Confirm Password</label> </td>
-                                <td> : <input type="password" name="confirmPassword" value=""/> </td>
-                            </tr>
-                           
-                            
-                        </table>
-                        <div>
-                            <br>
-                            <input type="submit" value="Sign Up" name="reg" class="r1" />
-                        </div>
-                    </form>
-                </center>
-            </td>
-        </tr>
-       
-    </table>
-    
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        input[type="radio"] {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+    <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password (6-12 characters):</label>
+        <input type="password" id="password" name="password" required minlength="6" maxlength="12"><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+         <br>
+         <br>
+         <label for="bloodGroup">Blood Group:</label>
+        <select id="bloodGroup" name="bloodGroup">
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+        </select><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function validateForm() {
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const genderInputs = document.querySelectorAll('input[name="gender"]');
+
+            // Validate password
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert('Passwords do not match. Please try again.');
+                return false;
+            }
+
+            // Validate gender
+            let genderSelected = false;
+            genderInputs.forEach(input => {
+                if (input.checked) {
+                    genderSelected = true;
+                }
+            });
+            if (!genderSelected) {
+                alert('Please select a gender.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
-
 </html>
-
